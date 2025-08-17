@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Assist</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Text Assist</h1>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="num-predictions">Suggestions</label>
+                        <select id="num-predictions" class="control-input">
+                            <option value="1">1</option>
+                            <option value="3" selected>3</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path id="theme-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="editor-container">
+                <textarea id="text-input" placeholder="Start typing..."></textarea>
+                <div class="suggestions-container" id="suggestions-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
