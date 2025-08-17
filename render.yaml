@@ -3,6 +3,6 @@ services:
     name: next-word-predict
     runtime: python
     pythonVersion: "3.10.13"
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "./build.sh"
     startCommand: "gunicorn app:app --bind 0.0.0.0:$PORT --workers 1"
     plan: free
