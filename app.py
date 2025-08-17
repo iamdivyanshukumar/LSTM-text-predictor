@@ -11,8 +11,7 @@ app = Flask(__name__)
 model = load_model('next_word_model.h5')
 with open('tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
-max_len = 20  # Should match your trained model's max_len
-
+max_len = 20  
 @app.route('/')
 def home():
     return render_template('index.html')
