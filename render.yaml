@@ -2,13 +2,7 @@ services:
   - type: web
     name: next-word-predict
     runtime: python
-    buildCommand: "./build.sh"
-    startCommand: "gunicorn app:app --worker-class gevent --bind 0.0.0.0:$PORT --workers 2"  # Reduced workers for free tier
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.13
+    pythonVersion: "3.10.13"
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app --bind 0.0.0.0:$PORT --workers 1"
     plan: free
-    disk:
-      name: model_cache
-      mountPath: /opt/render/.cache
-      sizeGB: 1 
